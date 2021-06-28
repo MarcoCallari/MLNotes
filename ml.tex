@@ -1,0 +1,58 @@
+% Created 2021-06-28 lun 22:50
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Marco}
+\date{\today}
+\title{Appunti machine learning}
+\hypersetup{
+ pdfauthor={Marco},
+ pdftitle={Appunti machine learning},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Termini base}
+\label{sec:orga1a765c}
+Per poter effettuare delle previsioni su un dato, è necessario definire alcuni componenti:
+\subsection{Modello}
+\label{sec:org40c552f}
+Relazione tra le caratteristiche e l'output.
+Rappresentazione interna dei dati che l'algoritmo ha appreso finora. Scatola nera che dati dei valori in input, fornisce una previsione in base a ciò che ha appreso finora.
+\subsection{Dataset in input}
+\label{sec:org05962f6}
+Per poter effettuare il training del modello, è necessario creare un insieme di dati da fornire in input. Questi dati sono costituiti da un insieme di caratteristiche (ovvero dei parametri che definiscono il dato) e, nel caso di supervised learning, da un'etichetta, che rappresenta il dato di output. Nel caso di unsupervided learning, l'etichetta non viene fornita dal \uline{data scientist} ma deve essere dedotta dall'algoritmo di learning.
+\subsection{Supervised learning}
+\label{sec:org23482e2}
+Il \uline{data scientist} fornisce l'etichetta insieme ai dati.
+\subsection{Unsupervised learning}
+\label{sec:orgd81b16f}
+Il \uline{data scientist} non fornisce l'etichetta insieme ai dati. L'algoritmo di machine learning deve ricavare anche l'etichetta.
+\subsection{Etichetta}
+\label{sec:org3a62e33}
+Valore in output a cui corrispondono le varie caratteristiche che caratterizzano il dato.
+\subsection{Cluster}
+\label{sec:orgea90055}
+Per poter effettuare previsioni su dei dati non etichettati, è necessario definire dei cluster, ovvero un gruppo di dati. Il numero di cluster deve essere uguale al numero di possibili etichette. L'algoritmo di learning definisce i cluster in base a dei possibili criteri matematici: ad esempio la distanza relativa tra ogni punto. Per esempio, per fornire una previsione su un nuovo dato, il modello prende la distanza del nuovo dato da ogni cluster e sceglie il cluster più vicino.
+
+\section{Prerequisiti}
+\label{sec:org3168cb6}
+\end{document}
