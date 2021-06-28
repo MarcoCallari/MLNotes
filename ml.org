@@ -1,4 +1,5 @@
 #+TITLE: Appunti machine learning
+#+AUTHOR: Marco
 
 * Termini base
 Per poter effettuare delle previsioni su un dato, è necessario definire alcuni componenti:
