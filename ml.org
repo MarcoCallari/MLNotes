@@ -1,20 +1,55 @@
 #+TITLE: Appunti machine learning
 #+AUTHOR: Marco
 
-* Termini base
-Per poter effettuare delle previsioni su un dato, è necessario definire alcuni componenti:
+* Concetti base
+** Dati necessari
+Per poter effettuare il training del modello, è necessario creare un insieme di dati da fornire in input. Questi dati sono costituiti da un insieme di caratteristiche (ovvero dei parametri che definiscono il dato) e, nel caso di supervised learning, da un'etichetta, che rappresenta il dato di output. Nel caso di unsupervided learning, l'etichetta non viene fornita dal _data scientist_ ma deve essere dedotta dall'algoritmo di learning.
+** Caratteristica (Feature)
+Valore usato dal modello per fornire una previsione.
+** Etichetta
+Valore in output a cui corrispondono le varie caratteristiche che caratterizzano il dato.
 ** Modello
 Relazione tra le caratteristiche e l'output.
 Rappresentazione interna dei dati che l'algoritmo ha appreso finora. Scatola nera che dati dei valori in input, fornisce una previsione in base a ciò che ha appreso finora.
-** Dataset in input
-Per poter effettuare il training del modello, è necessario creare un insieme di dati da fornire in input. Questi dati sono costituiti da un insieme di caratteristiche (ovvero dei parametri che definiscono il dato) e, nel caso di supervised learning, da un'etichetta, che rappresenta il dato di output. Nel caso di unsupervided learning, l'etichetta non viene fornita dal _data scientist_ ma deve essere dedotta dall'algoritmo di learning.
 ** Supervised learning
-Il _data scientist_ fornisce l'etichetta insieme ai dati.
+Per effettaure il tranining del modello, il _data scientist_ fornisce all'algoritmo l'etichetta insieme ai dati.
 ** Unsupervised learning
-Il _data scientist_ non fornisce l'etichetta insieme ai dati. L'algoritmo di machine learning deve ricavare anche l'etichetta.
-** Etichetta
-Valore in output a cui corrispondono le varie caratteristiche che caratterizzano il dato.
+Per effettaure il tranining del modello, il _data scientist_ fornisce all'algoritmo soltanto i dati e NON le etichette corrispondenti. Sta al modello associare i dati in input ad una etichetta.
 ** Cluster
 Per poter effettuare previsioni su dei dati non etichettati, è necessario definire dei cluster, ovvero un gruppo di dati. Il numero di cluster deve essere uguale al numero di possibili etichette. L'algoritmo di learning definisce i cluster in base a dei possibili criteri matematici: ad esempio la distanza relativa tra ogni punto. Per esempio, per fornire una previsione su un nuovo dato, il modello prende la distanza del nuovo dato da ogni cluster e sceglie il cluster più vicino.
-
-* Prerequisiti
+** Possibili tipi di etichette
+*** Regressione
+Il modello fornisce in output un valore numerico discreto.
+*** Classificazione
+Il modello fornisce in output un'etichetta presa da un insieme finito e prestabilito (ad esempio, per una mail può fornire soltanto Spam|Non spam).
+# ** Iperparametro
+# Parametro definito dal _data scientist_
+** Errore medio quadratico (Mean squared loss)
+ Dati $N$ punti usati per allenare il modello:
+   \begin{equation*}
+     \begin{bmatrix}
+           x_{0} \\
+           y_{0}
+         \end{bmatrix} ,
+     \begin{bmatrix}
+           x_{1} \\
+           y_{1}
+         \end{bmatrix} ...
+     \begin{bmatrix}
+           x_{N} \\
+           y_{N}
+         \end{bmatrix}
+  \end{equation*}
+  ed il modello:
+\begin{equation*}
+y=f(x)
+\end{equation*}
+ l'errore quadratico medio (MSL) è definito come:
+ \begin{equation*}
+ MSL = \frac{1}{N}\Sigma^{N}_{j=0}{(y(x_j)-y_j)^2}
+ \end{equation*}
+** Minimizzare l'errore
+*** Gradient descent
+Calcolando il gradiente della funzione di loss(errore), è possibile trovare l'errore minimo (con nessuna garanzia che sia globale).
+*** SGD
+@TODO
